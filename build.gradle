@@ -1,0 +1,29 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.mimecast'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.5.3'
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb:2.5.3'
+	implementation 'io.github.cdimascio:dotenv-java:2.2.3'
+	implementation 'io.github.cdimascio:java-dotenv:5.2.2'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.3'
+
+	// Recommended to start mongo with docker
+	// If you are using mongo on docker, comment the following line and re run gradle sync
+	implementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo:3.0.0'
+}
+
+test {
+	useJUnitPlatform()
+}
